@@ -77,7 +77,7 @@ function App() {
           {/* <img src="assets/logo.png" alt="" /> */}
         </div>
 
-        <div id="name">DOMOV</div>
+        <div id="namee">DOMOV</div>
 
         {/* sign in btn */}
         <div id="sign-in">

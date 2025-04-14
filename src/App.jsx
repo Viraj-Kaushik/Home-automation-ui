@@ -12,7 +12,9 @@ function App() {
   });
 
   // state to control sign in modal visibility
-  const [showSignIn, setShowSignIn] = useState(false);
+
+
+  const [showSignIn, setShowSignIn] = useState(true);
   
   // state to store user sign in data
   const [signInData, setSignInData] = useState({
@@ -51,6 +53,10 @@ function App() {
     
     // authentication part and firebase request
 
+
+    
+  // firebase connection and authentication 
+
     setShowSignIn(false);
     alert(`Welcome, ${signInData.name}!`);
 
@@ -71,7 +77,7 @@ function App() {
           {/* <img src="assets/logo.png" alt="" /> */}
         </div>
 
-        <div id="name">Nishchay's Home Automation</div>
+        <div id="name">DOMOV</div>
 
         {/* sign in btn */}
         <div id="sign-in">
@@ -95,14 +101,14 @@ function App() {
             <form onSubmit={handleSignInSubmit}>
 
               <div className="form-group">
-                <label htmlFor="ipAddress">IP Address:</label>
+                <label htmlFor="ipAddress">Password:</label>
                 <input
-                  type="text"
+                  type="password"
                   id="ipAddress"
                   name="ipAddress"
                   value={signInData.ipAddress}
                   onChange={handleInputChange}
-                  placeholder="192.168.123"
+                  placeholder="Password"
                   required
                 />
               </div>
@@ -113,7 +119,7 @@ function App() {
                   type="email"
                   id="email"
                   name="email"
-                  value={signInData.email}
+                  value={signInData.email }
                   onChange={handleInputChange}
                   placeholder="your@email.com"
                   required
@@ -135,7 +141,7 @@ function App() {
 
               <div className="form-buttons">
                 <button type="submit" className="submit-btn">Sign In</button>
-                <button type="button" className="cancel-btn" onClick={() => setShowSignIn(false)}>Cancel</button>
+                <button type="button" className="cancel-btn" onClick={() => setShowSignIn(true)}>Cancel</button>
               </div>
 
             </form>
@@ -160,14 +166,14 @@ function App() {
       {/* input box */}
       <div className="input-box">
 
-        <div className="url">
+        {/* <div className="url">
 
           Enter IP Address: 
           <input type="text" placeholder='192.102.211' id='text-box' />
           <img src="src/assets/connect.png" alt="Connect" id='connect' />
           {/* <div id='connect'></div> */}
 
-        </div>
+        {/* </div> */} 
 
         <br />
         {/* buttons */}
@@ -218,7 +224,9 @@ function App() {
       <div id='footer'>
         <p id='ftr'> Home Automation || All Rights reserved </p>
       </div>
+
     </>
+
   )
 }
 
